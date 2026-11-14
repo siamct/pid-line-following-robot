@@ -1,0 +1,4 @@
+# The live simulation (simulate.py) only needs the Python standard library (tkinter).
+# These are for the plots (plot_run.py) and the --snapshot option.
+matplotlib>=3.7
+pillow>=10.0
