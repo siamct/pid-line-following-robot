@@ -49,19 +49,19 @@ The gains are a starting point. To tune: set `Ki` and `Kd` to 0, raise `Kp` unti
 
 ## Testing in a 2D sim
 
-`sim/sim.py` runs any of the three files **unchanged** on a 2D track by pretending to be the `robot` library (motors, sensors, button, timer) with a simple two-wheel model. It's handy for comparing versions and trying gains before taking the robot out.
+`sim/sim.py` is a top-down simulator that runs any of the three files **unchanged**. It pretends to be the `robot` library (motors, sensors, button, timer) and drives a simple two-wheel robot round a track, with lap timers and the code's `print` output underneath. Buttons switch between the three versions and three tracks.
 
 ```
-python sim/sim.py pid_improved.py   # watch it drive in a window
-python sim/sim.py --compare         # run all three and print the results
+python sim/sim.py             # open the simulator
+python sim/sim.py --compare   # run every version on every track, no window
 ```
 
-On the sim track, 40 seconds each:
+Best lap on each sim track:
 
-| Version | Laps | Avg speed | Mean distance from line |
+| Version | Track 1: loop | Track 2: hairpins | Track 3: twisty |
 |---|---|---|---|
-| `rule_based.py` | 1.29 | 0.15 m/s | 3.5 mm |
-| `pid_hybrid.py` | 0.88 | 0.10 m/s | 3.6 mm |
-| `pid_improved.py` | 2.10 | 0.24 m/s | 2.1 mm |
+| `rule_based.py` | 36.98 s | 52.73 s | 40.59 s |
+| `pid_hybrid.py` | 53.90 s | 78.43 s | 59.05 s |
+| `pid_improved.py` | 19.74 s | 29.27 s | 23.29 s |
 
-The sim agrees with what happened on the real robot (the hybrid was slower than rule-based). The robot model is rough (wheel speeds, sensor spacing and motor lag are guesses in the top of the file), so the numbers are for comparing versions, not predicting real lap times.
+The sim agrees with what happened on the real robot (the hybrid was slower than rule-based). The robot model is rough (wheel speed, sensor spacing and motor lag are guesses at the top of the file), so the numbers are for comparing versions, not predicting real lap times. Needs Python 3 with tkinter, nothing else.
