@@ -2,6 +2,10 @@
 
 A small two-wheeled robot that follows a black tape line using three infrared reflectance sensors and a PID controller, running MicroPython on a Raspberry Pi Pico W. Built for a first-year robotics module at Manchester Metropolitan University, where it won the Best Design award.
 
+<img width="1476" height="1107" alt="image" src="https://github.com/user-attachments/assets/545ee317-a541-4923-9dd9-ea18b19a8833" />
+<img width="1416" height="1062" alt="image" src="https://github.com/user-attachments/assets/ae9fa9c8-bde9-478f-90be-f5ac513b1b6b" />
+<img width="1520" height="1140" alt="image" src="https://github.com/user-attachments/assets/25be289d-64a6-470a-88b8-fd1c13d9ba67" />
+
 The repository contains the robot firmware and a top-down simulation that runs the same controller code against a model of the robot and track. The simulation was written afterwards to show how the P, I and D terms behave without needing the hardware.
 
 ![Simulation window](docs/sim_window.png)
